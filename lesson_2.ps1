@@ -23,7 +23,7 @@ kubectl create -f ./k8s/pod.yaml -n study-mlc                     # Создае
 kubectl get pods -n study-mlc                                     # Теперь пода есть
 
 kubectl port-forward weather-pod 5004:80 -n study-mlc             # Пробрасываем порт до пода
-curl http://localhost:5004/WeatherForecast                      # Проверяем
+curl http://localhost:5004/WeatherForecast                        # Проверяем
 
 
 # =============================================================
@@ -32,7 +32,7 @@ kubectl get pods --show-labels -n study-mlc                               # См
 kubectl create -f ./k8s/service.yaml -n study-mlc                         # Создаем сервис
 kubectl get services -n study-mlc                                         # Проверяем, что все создалось
 kubectl port-forward svc/weather-service 5005:80 -n study-mlc             # Пробрасываем порт до сервиса
-curl http://localhost:5005/WeatherForecast                              # Проверяем
+curl http://localhost:5005/WeatherForecast                                # Проверяем
 
 
 # =============================================================
