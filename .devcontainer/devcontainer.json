@@ -1,0 +1,33 @@
+{
+    "name": "Env Tools",
+    "image": "dodopizza/env-tools:latest",
+    "remoteEnv": {
+        "DOCKER_REGISTRY": "dodoreg.azurecr.io"
+    },
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
+        "source=${env:HOME}${env:USERPROFILE}/.kube,target=/usr/local/share/kube-localhost,type=bind"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        // Git History
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        // Shell scripts
+        "streetsidesoftware.code-spell-checker",
+        "mads-hartmann.bash-ide-vscode",
+        "foxundermoon.shell-format",
+        "timonwong.shellcheck",
+        // Json & Jsonnet
+        "htwx.json-and-jsonc",
+        "eriklynd.json-tools",
+        "heptio.jsonnet",
+        "xrc-inc.jsonnet-formatter",
+        // Docker & K8S & HELM
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+    ],
+}
